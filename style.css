@@ -219,3 +219,10 @@ input.answer::placeholder {
     font-size: 3rem;
   }
 }
+
+footer {
+  position: absolute;
+  bottom: 30px;
+  color: #fff;
+  left: 20px;
+}
