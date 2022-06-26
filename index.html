@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Fresca&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Catch the Candy</title>
+  </head>
+  <body>
+    <header>
+      <h1>SAVE THE CANDY</h1>
+      <button class="start">START GAME</button>
+      <h3 class="countdown">10 Sec left</h3>
+      <h4 class="score">Score: <span>0</span></h4>
+    </header>
+
+    <input type="text" class="answer" placeholder=" answer" />
+
+    <div class="candy-control" data-calc="20 - 30"></div>
+
+    <section class="wrapper">
+      <div class="doomsday">
+        <img src="img/dead.svg" alt="skull" class="skull" />
+      </div>
+      <div class="ground"></div>
+      <img src="img/flag.svg" alt="flag" class="flag" />
+      <img src="img/lost.svg" alt="lost" class="lost" />
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.4/underscore-umd-min.js
+    "></script>
+    <script src="index.js"></script>
+  </body>
+</html>

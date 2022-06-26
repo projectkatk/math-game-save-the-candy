@@ -1,0 +1,221 @@
+:root {
+  --b-radius: 1rem;
+  --b-none: none;
+  --color-text: #252525;
+  --color-placeholder: #808080d2;
+  --box-shadow: 1px 1px 10px #00000022;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  font-family: "Fresca", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 220),
+    rgb(255, 209, 124),
+    rgb(62, 108, 217)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.start {
+  position: absolute;
+  top: 110%;
+  right: 1.5rem;
+  width: 8rem;
+  margin: 0 auto;
+  padding: 0.8rem;
+  border: var(--b-none);
+  border-radius: var(--b-radius);
+  transition: all 0.3s ease;
+  background-color: #f89063;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.start:hover {
+  transform: scale(0.95);
+  background-color: #daa529;
+  color: #fafafa;
+}
+
+.startIndicator {
+  animation: shine 3s ease forwards;
+  animation-iteration-count: 2;
+}
+
+@keyframes shine {
+  50% {
+    background-color: #c8e0f4;
+  }
+}
+
+.countdown {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.score {
+  position: absolute;
+  top: 3.5rem;
+  right: 1.5rem;
+}
+
+/* input & calculate styling*/
+input.answer {
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 5rem;
+  border: var(--b-none);
+  border-radius: var(--b-radius);
+  box-shadow: var(--box-shadow);
+  z-index: 10;
+}
+
+input.answer::placeholder {
+  color: var(--color-placeholder);
+}
+/* candy-control styling */
+/* a dropping candy */
+.candy-control {
+  width: 18rem;
+  height: 18rem;
+  background: url(img/candy1.svg);
+  position: relative;
+  top: 8vh;
+  left: 15vw;
+  transform: rotate(-45deg);
+  transition: all 1s ease;
+  z-index: 5;
+  opacity: 0;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* formula dropping together with the candy */
+.candy-control::after {
+  content: attr(data-calc);
+  color: #fff;
+  text-shadow: 2px 2px 5px #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 70%;
+  left: 27%;
+  transform: rotate(45deg);
+  transform-origin: top;
+  font-size: 3rem;
+  font-weight: bold;
+}
+/* candy float animation */
+@keyframes float {
+  50% {
+    transform: rotate(-45deg) translateY(20px) translateX(-20px);
+  }
+}
+
+/* Ground SVG styling */
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.ground {
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/ground_1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+  background-position-x: left;
+  position: absolute;
+  top: 0rem;
+}
+
+.doomsday {
+  z-index: 20;
+  position: absolute;
+  left: 10%;
+  bottom: -100vh;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.doomsdayAppear {
+  opacity: 1;
+  bottom: -20vh;
+}
+
+.skull {
+  width: 200px;
+  height: 200px;
+}
+
+/* conditional class for ground animation */
+
+.animation-ground {
+  animation-name: groundRattle;
+  animation-duration: 0.1s;
+  animation-iteration-count: 5;
+}
+/* ground rattling animation */
+@keyframes groundRattle {
+  50% {
+    transform: translateY(0.5rem);
+  }
+}
+
+/* flag styling */
+.flag,
+.lost {
+  width: 13rem;
+  position: fixed;
+  bottom: 0rem;
+  right: 1%;
+  transition: all 1s ease;
+}
+
+@media (min-width: 800px) {
+  .flag,
+  .lost {
+    width: 18rem;
+    bottom: -12rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
