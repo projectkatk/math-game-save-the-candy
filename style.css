@@ -203,7 +203,7 @@ input.answer::placeholder {
 .lost {
   width: 13rem;
   position: fixed;
-  bottom: 0rem;
+  bottom: -8rem;
   right: 1%;
   transition: all 1s ease;
 }
@@ -212,7 +212,7 @@ input.answer::placeholder {
   .flag,
   .lost {
     width: 18rem;
-    bottom: -12rem;
+    bottom: -20rem;
   }
 
   h1 {
